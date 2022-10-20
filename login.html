@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Login</title>
+  </head>
+  <body>
+
+    <section class="container forms"> 
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+
+                <form method="post" id="formElem" class="formElem">
+                    <div class="field input-field">
+                        <input type="email" name="username" placeholder="Email" class="username" required> 
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" name="password" placeholder="Password" class="password" required> 
+                        <!-- <i class='bx bx-hide eye-icon'></i> -->
+                    </div>
+
+                    <!-- <div class="form-link">
+                        <a href="#" class="forget-pass">Forget Password</a>
+                    </div> -->
+
+                    <div class="field button-field" >
+                        <button style="color: white !important">Login</button> 
+                    </div>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="signup.html" class="forget-pass">Sign up</a></span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        var myHeaders = new Headers();
+        formElem.onsubmit = async (e) => {
+            e.preventDefault();
+            let response = await fetch("https://certificate-module-laxmikant.herokuapp.com/login", {
+                method : 'POST',
+                body : new FormData(formElem),
+                headers:myHeaders
+            });
+            let result = await response.json();
+            console.log(result["detail"]);
+            if(result["detail"] == "wrong credentails" || result["detail"] == "Incorrect Password"){
+                alert("Invalid Credentails... Enter again");
+            }
+            else{
+                sessionStorage.setItem("token", "bearer ".concat(result["access_token"]));
+                console.log(sessionStorage.getItem("token"));
+                window.location.href="home.html";
+            }
+
+        }
+    </script>
+
+    
+  </body>
+</html>

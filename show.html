@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Show Records</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <script src="assets/js/show.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body onload="verify()">
+
+
+  <!-- ======= Header ======= -->
+
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Certificate Module<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="upload_data.html">Upload</a></li>
+            <li><a href="show.html">Show</a></li>
+            <li><a href="single_download.html">Download</a></li>
+            <li><a href="find.html">Find</a></li>
+            <li><a href="update.html">Update</a></li>
+            <li><a href="delete.html">Delete</a></li>
+            <li><button class="nav-link btn btn-link btn-sm" onclick="logout()" style="background-color: black; color: #FAF9F6;">Sign Out</button></li>
+            
+            
+          
+         
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Show Uploaded <span>Records</span></h2>
+          <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <form action="" method="post" id="formElem">
+                <!-- <a style="background-color: black !important;" href="login.html" class="btn-get-started">Create Certificate</a> -->
+                <button class="btn-get-started" type="submit" style="background-color: black !important;">Show All</button>
+            </form>
+            
+      
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+<br><br>
+   
+
+
+     
+
+      <section class="py-5" style="background:#FAF9F6;">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center contents" id="table" >
+                <div class="table-responsive ">
+                  <table class="table table-striped table-hover table-borderless display" id="table1" style="background: white; margin-top: 2%;text-align: center;">
+                    <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Issued By</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Created On</th>
+                        <th scope="col">Completion Date</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table-body">
+    
+                    </tbody>
+    
+                  </table>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+      <br /> 
+
+  </main><!-- End #main -->
+
+
+  <br><br><br><br>  <br><br><br><br>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Laxmikant</span></strong>. All Rights Reserved
+      </div>
+      
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  
+
+  
+  
+  
+
+  
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/verification.js"></script>
+
+
+  <!-- javascript backend -->
+
+  <script>
+    document.getElementById("table").style.display = "none";
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization",sessionStorage.getItem("token"));
+    formElem.onsubmit = async (e) => {
+    e.preventDefault();
+    
+    let response = await fetch('https://certificate-module-laxmikant.herokuapp.com/admin/show_all_certificates', {
+      method: 'get',
+      headers:myHeaders
+    });
+
+    let result = await response.json();
+   
+    if (result.length>0){
+    document.getElementById("table").style.display = "block";
+    var table = document.getElementById("table-body");
+
+    for(var i=0; i<result.length; i++){
+        var tr = document.createElement("tr");
+        tr.innerHTML = '<td scope="row">' + result[i].id + '</td>' +
+        '<td>' + result[i].name + '</td>' +
+        '<td>' + result[i].issued_by + '</td>' +
+        '<td>' + result[i].designation + '</td>' +
+        '<td>' + result[i].created_on + '</td>' +
+        '<td>' + result[i].completion_date + '</td>' ;
+        table.appendChild(tr);
+    }
+ 
+        
+        
+    }
+    else{
+        
+        alert("Nothing to display");
+        
+    }
+    
+};
+</script>
+
+
+</body>
+
+</html>
