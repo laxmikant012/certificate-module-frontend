@@ -188,6 +188,25 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/verification.js"></script>
 
+
+  <script>
+    
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization",sessionStorage.getItem("token"));
+    formElem.onsubmit = async (e) => {
+    e.preventDefault();
+    
+    let response = await fetch('https://certificate-module-laxmikant.herokuapp.com/admin/show_all_certificates', {
+      method: 'get',
+      headers:myHeaders
+    });
+
+  
+    
+    
+};
+</script>
+
 </body>
 
 </html>
