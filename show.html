@@ -27,14 +27,18 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.5/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  <script src="assets/js/show.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+   
+
+
 
 </head>
+
+
 
 <body onload="verify()">
 
@@ -175,6 +179,8 @@
   <script src="assets/js/verification.js"></script>
 
 
+
+
   <!-- javascript backend -->
 
   <script>
@@ -205,6 +211,7 @@
         '<td>' + result[i].completion_date + '</td>' ;
         table.appendChild(tr);
     }
+    $('#table1').DataTable();
  
         
         
@@ -217,6 +224,14 @@
     
 };
 </script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+
 
 
 </body>
