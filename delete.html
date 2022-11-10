@@ -157,7 +157,7 @@
 
     formElem.onsubmit = async (e) => {
     e.preventDefault();
-    let response = await fetch('https://certificate-module-laxmikant.herokuapp.com/admin/delete_certificate', {
+    let response = await fetch('https://certificate-module-laxmikant.herokuapp.com/admin/delete_record', {
       method: 'delete',
       headers:myHeaders,  
       body: new FormData(formElem)
