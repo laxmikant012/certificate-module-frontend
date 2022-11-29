@@ -245,7 +245,7 @@
     myHeaders.append("Authorization",sessionStorage.getItem("token"));
     formElem.onsubmit = async (e) => {
     e.preventDefault();
-    let response = await fetch('http://localhost:8000/admin/upload_csv', {
+    let response = await fetch('https://certificate-module-laxmikant.herokuapp.com/admin/upload_csv', {
       method: 'POST',
       headers:myHeaders,
       body: new FormData(formElem)
