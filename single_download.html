@@ -155,7 +155,7 @@
     formElem.onsubmit = async (e) => {
     e.preventDefault();
     
-    let response = await fetch('https://certificate-module-laxmikant.herokuapp.com/admin/download_single_certificate', {
+    let response = await fetch('http://localhost:8000/admin/download_single_certificate', {
       method: 'post',
       headers:myHeaders,
       body: new FormData(formElem)
